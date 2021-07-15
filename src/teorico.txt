@@ -1,0 +1,15 @@
+a-
+Exponer los controladores para que puedan ser utilizados a través de enpoints
+El path debería incluir en el path /api antes de llamar al recurso
+b-
+
+route.add("video/", "GET", VideoController, "getVideos")
+// Podría ser un patch dado que solo se requiere editar el título
+// Utilizo POST para capturar el body que se envíe desde en form(en lugar de put)
+route.add("video/:ID", "POST", VideoController, "editar")
+route.add("video/:ID", "POST", VideoController, "addValoracion")
+route.add("video/:ID", "DELETE", VideoController, "delete")
+
+// Valoracion
+route.add("video/:ID/valoracion", "GET", VideoController, "getValoracionesByVideo")
+
